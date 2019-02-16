@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
+  <services>
+    <service name="sherlock">
+      <implementation-class>valid.sherlock</implementation-class>
+    </service>
+    <service name="Nodivisible">
+      <implementation-class>divi.Nodivisible</implementation-class>
+    </service>
+  </services>
+  <clients/>
+</jax-ws>
