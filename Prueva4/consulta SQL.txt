@@ -1,0 +1,15 @@
+Consulta SQL.
+Dadas dos tablas para la consulta propuestas por el modelo entidad relación.
+Tabla 1. COMPRA
+ID	NOMBRE	UNIDADESC	EGRESO	FECHAC
+
+Tabla2. VENTA
+ID	NOMBRE	UNIDADESV	INGRESO	FECHAV
+
+Siendo:
+@hasta fecha hasta la que se quiere la consulta
+@idusuario ID del producto a consultar
+Estado de resultados por producto hasta una fecha dada.
+select C.ID, C.NOMBRE, C.UNIDADESC - V.UNIDADESV as STOCK, C.sum(INGRESO) as INGRESO TOTAL, V.sum(EGRESO) as EGRESO TOTAL, INGRESO TOTAL – EGRESO TOTAL as GANANCIA, C.FECHAC, V.FECHAV
+from COMPRA as C, VENTA as V
+where ID=@idusuario and FECHAC <= @hasta and FECHAV <= @hasta
